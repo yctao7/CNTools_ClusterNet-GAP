@@ -1,12 +1,19 @@
-# ClusterNet
+# ClusterNet and GAP
 
-This code implements and evaluates the ClusterNet method described in the NeurIPS 2019 [paper](https://arxiv.org/abs/1905.13732) "End to End Learning and Optimization on Graphs". ClusterNet provides a differentiable k-means clustering layer which is used as a building block for solving graph optimization problems. 
+This code adopts the framework of the code of ClusterNet method in the NeurIPS 2019 [paper](https://arxiv.org/abs/1905.13732) "End to End Learning and Optimization on Graphs" and adds the option to use GAP method [paper](https://arxiv.org/abs/1903.00614) "GAP: Generalizable Approximate Graph Partitioning Framework"
 
 ```
 @inproceedings{wilder2019end,
   title={End to End Learning and Optimization on Graphs},
   author={Wilder, Bryan and Ewing, Eric and Dilkina, Bistra and Tambe, Milind},
   booktitle={Advances in Neural and Information Processing Systems},
+  year={2019}
+}
+
+@article{nazi2019gap,
+  title={Gap: Generalizable approximate graph partitioning framework},
+  author={Nazi, Azade and Hang, Will and Goldie, Anna and Ravi, Sujith and Mirhoseini, Azalia},
+  journal={arXiv preprint arXiv:1903.00614},
   year={2019}
 }
 ```
