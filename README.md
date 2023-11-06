@@ -1,6 +1,6 @@
 # ClusterNet and GAP
 
-This code adopts the framework of the code of ClusterNet method in the NeurIPS 2019 [paper](https://arxiv.org/abs/1905.13732) "End to End Learning and Optimization on Graphs" and adds the option to use GAP method [paper](https://arxiv.org/abs/1903.00614) "GAP: Generalizable Approximate Graph Partitioning Framework".
+This code adopts the framework of the code of ClusterNet method in the NeurIPS 2019 [paper](https://arxiv.org/abs/1905.13732) "End to End Learning and Optimization on Graphs" and adds the option to use GAP method [paper](https://arxiv.org/abs/1903.00614) "GAP: Generalizable Approximate Graph Partitioning Framework" for cellular neighborhood identification.
 
 ```
 @inproceedings{wilder2019end,
