@@ -30,7 +30,7 @@ This code adopts the framework of the code of ClusterNet method in the NeurIPS 2
 
 # Datasets
 
-The datasets used are placed in the mydata folder, which are knn-graphs of different k.
+The datasets used are placed in the mydata folder, which are knn-graphs of different k and cell type information as node features (feat).
 
 # Examples of running the experiments
 
