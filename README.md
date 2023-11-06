@@ -1,6 +1,6 @@
 # ClusterNet and GAP
 
-This code adopts the framework of the code of ClusterNet method in the NeurIPS 2019 [paper](https://arxiv.org/abs/1905.13732) "End to End Learning and Optimization on Graphs" and adds the option to use GAP method [paper](https://arxiv.org/abs/1903.00614) "GAP: Generalizable Approximate Graph Partitioning Framework"
+This code adopts the framework of the code of ClusterNet method in the NeurIPS 2019 [paper](https://arxiv.org/abs/1905.13732) "End to End Learning and Optimization on Graphs" and adds the option to use GAP method [paper](https://arxiv.org/abs/1903.00614) "GAP: Generalizable Approximate Graph Partitioning Framework".
 
 ```
 @inproceedings{wilder2019end,
@@ -30,43 +30,11 @@ This code adopts the framework of the code of ClusterNet method in the NeurIPS 2
 
 # Datasets
 
-Included are the datasets used to run the experiments in the paper. Here are the mappings between the filenames (which can be used as the --dataset argument to the code) and the names of the datasets in the paper:
-
-* cora: the [cora](https://relational.fit.cvut.cz/dataset/CORA) dataset (cora)
-* citeseer: the [citeseer](https://linqs.soe.ucsc.edu/data) dataset (citeseer)
-* moreno: the [adolescent social network](http://konect.uni-koblenz.de/networks/moreno_health) (adol)
-* protein_vidal: the [protein interaction network](http://konect.uni-koblenz.de/networks/maayan-vidal) (protein)
-* fb_small: the [facebook network](http://konect.uni-koblenz.de/networks/ego-facebook) (fb)
-* pubmed: the [pubmed](https://linqs.soe.ucsc.edu/data) citation dataset (pubmed)
-* synthetic_spa: a [synthetic distribution](https://dl.acm.org/citation.cfm?id=3237383.3237507) based on spacial preferential attachment model (synthetic)
-
-# Arguments to experiments scripts
-
-The experiments_singlegraph.py and experiments_inductive.py scripts take a number of arguments to specify the experiment to run as well as various hyperparameters. The following arguments determine which experiment is run. The remainder specify standard hyperparameters for the GCNs/training process, with default values from the paper provided in the examples below.
-
-* objective: this determines which optimization problem is used for the experiment. Use "--objective modularity" for the community detection task and "--objective kcenter" for the facility location task. 
-* dataset: which dataset to run on. For the datasets in the paper, which are included in this release, see the section below. Note that for experiments on the facility location problem, you should use the "datasetname_connected", which retains only the largest connected component to ensure that distances are well-defined. The only exception is the synthetic graphs, which are always connected. 
-* pure_opt: Add the flag "--pure_opt" to run experiments with no link prediction step, i.e., all methods observe the full graph. This is disabled by default.
+The datasets used are placed in the mydata folder, which are knn-graphs of different k.
 
 # Examples of running the experiments
 
-Example running the single-graph experiment for the community detection problem on the cora dataset:
-
-```
-python experiments_singlegraph.py --objective modularity --hidden 50 --embed_dim 50 --weight_decay 5e-4 --dropout 0.2 --train_iters 1001 --clustertemp 50 --num_cluster_iter 1 --lr 0.01 --dataset cora
-```
-
-For the kcenter problem, make sure to use that corresponding "_connected" version of the graph, which keeps only the largest connected component so that distances are well-defined:
-
-~~~
-python experiments_singlegraph.py --objective kcenter --hidden 50 --embed_dim 50 --weight_decay 5e-4 --dropout 0.2 --train_iters 1001 --clustertemp 30 --num_cluster_iter 1 --lr 0.01 --dataset cora_connected
-~~~
-
-The process is the same for the inductive experiments, e.g.,:
-
-~~~
-python experiments_inductive.py --objective modularity --hidden 50 --embed_dim 50 --weight_decay 5e-4 --dropout 0.2 --train_iters 220 --clustertemp 70 --num_cluster_iter 1 --lr 0.001 --dataset pubmed
-~~~
+See run.sh for all commands to reproduce the results of ClusterNet and GAP.
 
 # Dependencies
 
